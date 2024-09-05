@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addmin side</title>
+    <link rel="shortcut icon" href="img/cropped-favicon-192x192.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script
+        src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .left {
+        width: 10%;
+        height: 100vh;
+        background-color: rgb(71, 71, 71);
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+        background-color: aliceblue !important;
+        color: black;
+        border-radius: 5px;
+    }
+
+    .nav-link:hover {
+        color: white;
+    }
+</style>
+
+<body class="flex">
+    <section class="left overflow-hidden">
+        <div class="w-[100%] h-[150px] flex items-center justify-center flex-col">
+            <img src="img/cropped-favicon-192x192.png" width="50%" alt="">
+            <h2 class="text-[20px] text-[#ffff] mt-[10px]">Addmin Side</h2>
+        </div>
+        <hr class="p-[2px] bg-white">
+        <div class="mt-[15px]">
+            <div class="nav flex-column nav-pills space-y-3" id="v-pills-tab" role="tablist"
+                aria-orientation="vertical">
+                <button class="nav-link active bg-transparent text-[#ffff]" id="v-pills-home-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true">Home</button>
+                <button class="nav-link  text-[#ffff] bg-transparent" id="v-pills-profile-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                    aria-selected="false">Profile</button>
+                <button class="nav-link  text-[#ffff] bg-transparent" id="v-pills-messages-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                    aria-selected="false">Messages</button>
+                <button class="nav-link  text-[#ffff] bg-transparent" id="v-pills-settings-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+                    aria-selected="false">Settings</button>
+            </div>
+    </section>
+    <section class="w-[90%]">
+
+        <div class="tab-content mt-[20px]" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
+                tabindex="0">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active hover:text-black ms-[20px]" id="nav-home-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                        aria-selected="true">Add</button>
+                        <button class="nav-link hover:text-black" id="nav-profile-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                        aria-selected="false">Added</button>
+                        <button class="nav-link hover:text-black" id="nav-contact-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                        aria-selected="false">update</button>
+                    </nav>
+                    <div class="tab-content mt-[20px]" id="nav-tabContent">
+                        <div class="tab-pane fade show active container-xl mx-auto" id="nav-home" role="tabpanel"
+                        aria-labelledby="nav-home-tab" tabindex="0">
+                        <h2 class="text-[25px] pt-[20px] text-center fw-bolder underline">Adde Prodect</h2>
+                        <label class="col-form-label">prodect Name</label>
+                        <input type="text" class="form-control" id="prodectName" />
+                        <label class="col-form-label">M R P</label>
+                        <input type="text" class="form-control" id="mrp" />
+                        <label class="col-form-label">img</label>
+                        <input type="text" ` class="form-control" placeholder="img https://" id="img" />
+                        <label class="col-form-label">Discribsation</label>
+                        <textarea class="form-control" id="Discribsation"></textarea>
+                        <button onclick="addprodect()"
+                        class="bg-[#ffff] hover:bg-[#262b2c] mt-[30px] border border-2 border-black px-[30px] py-[18px] text-[#262b2c] hover:text-[#ffff] transition delay-250 duration-300 text-[14px] tracking-[2px] leading-[1em] font-bold">
+                        Add prodect
+                    </button>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                        tabindex="0">
+                        <h2 class="text-[25px] pt-[20px] text-center fw-bolder underline">Your Prodect</h2>
+                        <div class="container-xl mx-auto">
+                            <table class="table mt-[25px]">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">index</th>
+                                        <th scope="col">images</th>
+                                        <th scope="col">Prodect Name</th>
+                                        <th scope="col">M R P</th>
+                                        <th scope="col">Discribsation</th>
+                                        <th scope="col">Dilet</th>
+                                        <th scope="col">view</th>
+                                        <!-- <th scope="col">Aveleble Prodect</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade container-xl mx-auto" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+                        tabindex="0">
+                        <h2 class="text-[25px] pt-[20px] text-center fw-bolder underline">update Prodect</h2>
+                        <label class="col-form-label">prodect Name</label>
+                        <input type="text" class="form-control" id="prodectName1" />
+                        <label class="col-form-label">M R P</label>
+                        <input type="text" class="form-control" id="mrp1" />
+                        <label class="col-form-label">img</label>
+                        <input type="text" ` class="form-control" placeholder="img https://" id="img1" />
+                        <label class="col-form-label">Discribsation</label>
+                        <textarea class="form-control" id="Discribsation1"></textarea>
+                        <input type="hidden" id="index" />
+                        <button onclick="Updateprodect()"
+                        class="bg-[#ffff] hover:bg-[#262b2c] mt-[30px] border border-2 border-black px-[30px] py-[18px] text-[#262b2c] hover:text-[#ffff] transition delay-250 duration-300 text-[14px] tracking-[2px] leading-[1em] font-bold">
+                        update
+                    </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
+                tabindex="0">...</div>
+            <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab"
+                tabindex="0">...</div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
+                tabindex="0">...</div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
+                tabindex="0">...</div>
+        </div>
+        </div>
+    </section>
+
+    
+    <script>
+        let user = JSON.parse(localStorage.getItem("prodect")) || [];
+        let tbody = document.getElementById("tbody")
+        console.log(user);
+        function addprodect() {
+            let prodectName = document.getElementById("prodectName").value
+            let mrp = document.getElementById("mrp").value
+            let img = document.getElementById("img").value
+            let Discribsation = document.getElementById("Discribsation").value
+            let lol = {
+                prodectName,
+                mrp,
+                img,
+                Discribsation,
+            }
+            user.push(lol)
+            localStorage.setItem("prodect",JSON.stringify(user))
+            console.log(user);
+            location.reload()
+        }
+        function addpro() {
+            user.map((value, index) => {
+                let tr = document.createElement("tr");
+                tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td><img src="${value.img}" alt="" height=50px width=50px></td>
+            <td>${value.prodectName}</td>
+            <td>${value.mrp}</td>
+            <td>${value.Discribsation}</td>
+            <td><button onclick="delete1(${index})" class="px-[10px] py-[5px] rounded-2 bg-black text-[#ffff]">delete</button></td>
+            <td><button onclick="view(${index})"
+                
+                class="px-[10px] py-[5px] rounded-2 bg-amber-300 text-[#ffff]">view</button></td>
+            `;
+                tbody.appendChild(tr)
+            })
+        }
+        addpro()
+
+        function delete1(index){
+            user.splice(index,1)
+            localStorage.setItem("prodect",JSON.stringify(user))
+            location.reload()
+        }
+
+        function view(index){
+            let result=user[index]
+            let prodectName = document.getElementById("prodectName1").value=result.prodectName;
+            let mrp = document.getElementById("mrp1").value=result.mrp;
+            let img = document.getElementById("img1").value=result.img;
+            let Discribsation = document.getElementById("Discribsation1").value=result.Discribsation;
+            document.getElementById("index").value = index;
+        }
+
+        function Updateprodect(){
+            let prodectName = document.getElementById("prodectName1").value
+            let mrp = document.getElementById("mrp1").value
+            let img = document.getElementById("img1").value
+            let Discribsation = document.getElementById("Discribsation1").value
+            let index = parseInt(document.getElementById("index").value);
+            let up = {
+                prodectName,
+                mrp,
+                img,
+                Discribsation,
+            }
+            user.splice(index,1, up);
+            localStorage.setItem("prodect",JSON.stringify(user))
+            console.log(user);
+            location.reload()
+        }
+
+    </script>
+</body>
+
+</html>
